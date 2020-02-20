@@ -10,7 +10,7 @@
       }
      </style>
       <br>
-      <img src="/assets/mh1.jpg" alt="Smiley face" style="width:100%"><br>
+      <!-- <img src="/assets/mh1.jpg" alt="Smiley face" style="width:100%"><br> -->
       <h3 class="mb-3 text-left">Enter Jar Number</h3>
   
       <div class="form-group">
@@ -22,6 +22,12 @@
       </div>
     </div>
 </div><br>
+
+<div class="container custom-container-2" *ngIf="temp1" style="background-color: palegoldenrod">
+  <div>
+    <h5 style="color: red;">Error: Jar id is NOT found! Please enter valid Jar ID</h5>
+  </div>
+</div>
       
 <div class="container custom-container-2" *ngIf="temp" style="background-color: palegoldenrod">
   <div>
@@ -61,3 +67,4 @@
     </table>
   </div>
 </div>
+

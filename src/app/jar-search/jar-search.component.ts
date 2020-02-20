@@ -12,6 +12,7 @@ export class JarSearchComponent implements OnInit {
   jarData: any = [];
   jarid: any;
   temp=false;
+  temp1=false;
 
   constructor(
     public restApi: RestApiService,
@@ -24,12 +25,20 @@ export class JarSearchComponent implements OnInit {
   findJar() {
     {
       this.restApi.getJar(this.jarid).subscribe(data => {
-        console.log(data);
+        console.log("A", data);
+        console.log("B", data.length);
         this.jarData = data[0];
-        console.log("this.jarData.length", this.jarData.length)
-        if(this.jarData.length == undefined)
+        // console.log("this.jarData.length", this.jarData.length)
+        console.log("Type:", typeof(this.jarData))
+        if(data.length != 0)
         {
+          this.temp1=false;
           this.temp=true;
+        }
+        else
+        {
+          this.temp=false;
+          this.temp1=true;
         }
       })
     }
